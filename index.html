@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My mobile phone - store with - dynamic data</title>
+    <!-- tailwind and daisy ui cdn  -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@3.5.1/dist/full.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <header>
+      <h1 class="text-center text-4xl font-bold py-8">
+        Welcome To <span class="text-violet-500">My Mobile phone - Store</span>
+      </h1>
+    </header>
+    <main>
+      <section class="max-w-7xl mx-auto mb-10">
+        <!-- mobile phone searching section  -->
+        <div class="text-center my-8">
+          <input
+            id="search-field"
+            type="text"
+            placeholder="Search your phone"
+            class="input input-ghost w-full max-w-xs"
+          />
+          <button
+            onclick="handlePhoneSearch()"
+            class="btn btn-primary text-white"
+          >
+            Search
+          </button>
+        </div>
+        <!-- load mobile phones (container)  -->
+        <div
+          id="all-phones-container"
+          class="grid gap-5 justify-center grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+        ></div>
+        <!-- show all button  -->
+        <div id="show-all-btn-container" class="text-center mt-8 hidden">
+          <button
+            onclick="handleShowAllBtn()"
+            class="btn btn-primary text-white"
+          >
+            Show All
+          </button>
+        </div>
+        <!-- show no Data found (if no match any data) after clicked the search button -->
+        <div id="no-data-found-container" class="text-center mt-16 hidden">
+          <p class="text-3xl font-bold">No Data Found</p>
+        </div>
+
+        <!-- show details modal  -->
+    
+        <dialog id="show_details_modal" class="modal">
+          <form method="dialog" class="modal-box">
+            <button
+              class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2"
+            >
+              ✕
+            </button>
+            <div id="show-details-modal-contents">
+
+            </div>
+            
+          </form>
+        </dialog>
+      </section>
+    </main>
+
+    <!-- custom js file here  -->
+    <script src="js/script.js"></script>
+  </body>
+</html>
